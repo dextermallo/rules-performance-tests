@@ -71,9 +71,7 @@ jobs:
         run: |
 
           BEFORE_COMMIT=${{ github.event.before }}
-          AFTER_COMMIT=${{ github.event.after }}
-
-          poetry run collect --test-name pipeline-test --before "$BEFORE_COMMIT" --after "$AFTER_COMMIT" --utils locust,ftw --mode pipeline
+          poetry run collect --test-name pipeline-test --before "$BEFORE_COMMIT" --utils locust,ftw --mode pipeline
 
       - name: "Display Text-based report"
         run: |
