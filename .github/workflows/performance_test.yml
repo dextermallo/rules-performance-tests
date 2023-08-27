@@ -4,14 +4,14 @@ name: Performance Tests
 on:
   push:
     branches:
-      - demo
+      - dev
     paths:
       - 'rules/**'
       - 'tests/**'
       - '.github/**'
   pull_request:
     branches:
-      - demo
+      - dev
     paths:
       - 'rules/**'
       - 'tests/**'
@@ -57,12 +57,14 @@ jobs:
           mv ./coreruleset/tests ./
           mv ./coreruleset/crs-setup.conf.example ./
           rm -rf coreruleset
+          cp -R rules tmp
 
           # create ftw yaml file
           cp .example.ftw.yaml .ftw.yaml
 
           # init dependencies
           poetry install
+          git add -f rules
 
       - name: "Collect raw data"
         run: |
