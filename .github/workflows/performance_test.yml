@@ -53,6 +53,7 @@ jobs:
 
           # fetch rules, tests, etc. form CRS
           git clone https://github.com/coreruleset/coreruleset
+          mv ./coreruleset/rules ./
           mv ./coreruleset/plugins ./
           mv ./coreruleset/tests ./
           mv ./coreruleset/crs-setup.conf.example ./
