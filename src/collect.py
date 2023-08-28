@@ -144,7 +144,7 @@ def init_tmp_file(arg: CollectCommandArg, changed_rules: List[_ChangedRule]):
             logger.warning(f"Test case for {changed_rule.req} does not have test case")
 
     # clone *.data
-    exec_cmd = f"ls tmp/rules | grep -E \'.*.data$\'"
+    exec_cmd = "ls tmp/rules | grep -E '.*.data$'"
 
     output = subprocess.check_output(exec_cmd, shell=True).decode()
 
